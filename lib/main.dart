@@ -1,3 +1,4 @@
+import 'package:e_commers/modules/login/login_screen.dart';
 import 'package:e_commers/shared/styles/color.dart';
 import 'package:flutter/material.dart';
 
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
               borderSide: BorderSide.none,
             ),
           )),
-      home: QrCode(),
+      home: LoginScreen(),
     );
   }
 }

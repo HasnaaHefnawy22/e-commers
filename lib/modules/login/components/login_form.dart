@@ -1,10 +1,8 @@
-import 'package:e_commers/modules/scanner_screen/qr_code.dart';
-import 'package:e_commers/shared/components/scanner.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../shared/styles/color.dart';
-
+import '../../scanner_screen/qr_code.dart';
 class LoginForm extends StatefulWidget {
   LoginForm({
     super.key,
@@ -81,7 +79,10 @@ class _LoginFormState extends State<LoginForm> {
           ElevatedButton(
             onPressed: () {
               if (formKey.currentState!.validate()) {
-                navigateAndFinish(context, QrCode());
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => QrCode()));
               }
             },
             child: Text(
@@ -94,15 +95,3 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 }
-//AlreadyHaveAnAccountCheck(
-//          press: () {
-//          Navigator.push(
-//          context,
-//        MaterialPageRoute(
-//        builder: (context) {
-//        return const SignUpScreen();
-//    },
-//),
-//         );
-//     },
-// ),

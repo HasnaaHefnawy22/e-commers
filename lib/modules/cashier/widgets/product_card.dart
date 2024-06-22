@@ -1,3 +1,4 @@
+import 'package:e_commers/shared/styles/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../shared/styles/style.dart';
@@ -20,7 +21,7 @@ class _ProductCardState extends State<ProductCard> {
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Container(
         decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 189, 187, 190),
+            color: kPrimaryLightColor,
             borderRadius: BorderRadiusDirectional.circular(40)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -39,41 +40,31 @@ class _ProductCardState extends State<ProductCard> {
             ),
              Text(
               widget.productModel.name??'',
-              style: Styles.style24,
+              style: Styles.styleBold15,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                 Padding(
-                  padding:const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      Text(
-                        "${widget.productModel.price??''} EGP",
-                        style: Styles.style24,
-                      ),
-                    ],
-                  ),
-                ),
-                IconButton(
-                  highlightColor: Colors.amber,
-                  style: const ButtonStyle(
-                      backgroundColor: MaterialStatePropertyAll(
-                          Color.fromARGB(255, 117, 112, 210))),
-                  onPressed: () {
-           
-                    setState(() {
-                      
-                    });
-                    BlocProvider.of<AddProductCubit>(context).addOrRemoveProduct(productModel: widget.productModel);
-                  },
-                  icon:  Icon(
-                    size: 25,
-                  BlocProvider.of<AddProductCubit>(context).products.contains(widget.productModel) ?Icons.check: Icons.add,
-                  ),
-                ),
-              ],
+            Text(
+              "${widget.productModel.price??''} EGP",
+              style: Styles.styleBold15,
             ),
+            IconButton(
+              highlightColor: kPrimarygrayColor,
+              style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(
+                      kPrimaryColor)),
+              onPressed: () {
+
+                setState(() {
+
+                });
+                BlocProvider.of<AddProductCubit>(context).addOrRemoveProduct(productModel: widget.productModel);
+              },
+              icon:  Icon(
+                size: 25,
+                color: kPrimarywhiteColor,
+                BlocProvider.of<AddProductCubit>(context).products.contains(widget.productModel) ?Icons.check: Icons.add,
+              ),
+            ),
+
           ],
         ),
       ),

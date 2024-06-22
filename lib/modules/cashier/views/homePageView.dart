@@ -1,3 +1,4 @@
+import 'package:e_commers/shared/styles/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -38,6 +39,7 @@ class _homePageViewState extends State<homePageView> {
                 if (state is CategoriesSuccess) {
                   return SizedBox(
                     height: MediaQuery.of(context).size.height * .1,
+                    width: double.infinity,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: state.categories.length,
@@ -50,7 +52,7 @@ class _homePageViewState extends State<homePageView> {
                                   });
                                 },
                                 category: state.categories[index],
-                                coolor: const Color(0xFF6F35A5),
+                                coolor: kPrimaryColor,
                               )
                             : categoryCard(
                                 onPress: () {
@@ -60,7 +62,7 @@ class _homePageViewState extends State<homePageView> {
                                 },
                                 category: state.categories[index],
                                 coolor:
-                                    const Color.fromARGB(255, 188, 187, 187),
+                                    kPrimaryLightColor,
                               );
                       },
                     ),
@@ -80,8 +82,8 @@ class _homePageViewState extends State<homePageView> {
                     child:products!.length==0?Center(child:Text('There is no ${category.name}',style: Styles.style24,) ,) :GridView.builder(
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 4,
-                        mainAxisSpacing: 15,
+                        crossAxisCount: 5,
+                        mainAxisSpacing: 5,
                         crossAxisSpacing: 5,
                         childAspectRatio: .65,
                       ),

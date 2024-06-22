@@ -20,7 +20,7 @@ class categoryCard extends StatelessWidget {
       onTap: onPress,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Container(
+        child: Container(width: 200,
           decoration: BoxDecoration(
             color: coolor,
             borderRadius: BorderRadius.circular(15),

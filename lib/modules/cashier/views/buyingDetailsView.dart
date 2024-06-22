@@ -14,24 +14,12 @@ class buyingDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: kPrimaryLightColor,
-      // size of left bar
-      //width: MediaQuery.sizeOf(context).width / 4,
-      width: 375,
+      color: kPrimaryLightColor,width: 375,
       child: const Column(
         children: [
-          //bigvirticalSpace(),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   children: [
-          //     studentSearchButton(),
-          //     qrScanButton(),
-          //   ],
-          // ),
           SizedBox(
             height: 20,
           ),
-          // smallVirticalSpace(),
           studentCard(),
           SizedBox(
             height: 20,

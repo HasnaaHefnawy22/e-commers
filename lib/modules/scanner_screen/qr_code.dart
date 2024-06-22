@@ -2,6 +2,8 @@ import 'package:e_commers/shared/components/scanner.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
+import '../cashier/pages/homePage.dart';
+
 class QrCode extends StatefulWidget {
   const QrCode({super.key});
 
@@ -42,14 +44,14 @@ class _QrCodeState extends State<QrCode> {
           final List<Barcode> barcodes = capture.barcodes;
           for (Barcode code in barcodes) {
             if (barcodes.isNotEmpty) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(code.rawValue.toString()),
-                  duration: const Duration(
-                      seconds: 5), // Adjust the duration as needed
-                ),
-              );
-              // navigateAndFinish(context, LoginNew());
+              // ScaffoldMessenger.of(context).showSnackBar(
+              //   SnackBar(
+              //     content: Text(code.rawValue.toString()),
+              //     duration: const Duration(
+              //         seconds: 5), // Adjust the duration as needed
+              //   ),
+              // );
+              navigateAndFinish(context, homePage());
 
             }
           }

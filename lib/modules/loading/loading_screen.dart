@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-    Future.delayed(Duration(seconds: 3),(){
+    Future.delayed(Duration(seconds: 7),(){
       Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
     });
 
@@ -28,7 +28,18 @@ class _SplashScreenState extends State<SplashScreen> {
     return  Scaffold(
       backgroundColor: kPrimaryColor,
       body: Center(
-        child: Image.asset('assets/images/logoDark.png',height: 350,width: 350,),
+        child: Container(
+          //width: 300,
+          //height: 300,
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(15)),
+            image: DecorationImage(
+              //fit: BoxFit.fill,
+              image: AssetImage('assets/logoDark.png'),
+            ),
+          ),
+        ),
+        //Image.asset('assets/images/logoDark.png',height: 350,width: 350,),
       ),
     );
   }

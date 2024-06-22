@@ -8,6 +8,7 @@ import 'modules/cashier/cubit/add_product_cubit.dart';
 import 'modules/cashier/cubit/cubit/categories_cubit.dart';
 import 'modules/cashier/pages/homePage.dart';
 import 'modules/cashier/repos/home_repo_impl.dart';
+import 'modules/loading/loading_screen.dart';
 import 'modules/scanner_screen/qr_code.dart';
 
 void main() {
@@ -63,7 +64,7 @@ class _MyAppState extends State<MyApp> {
               ),
             )),
         debugShowCheckedModeBanner: false,
-        home: homePage(),
+        home: SplashScreen(),
       ),
     );
   }

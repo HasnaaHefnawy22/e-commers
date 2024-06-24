@@ -7,9 +7,15 @@ import '../models/product_model.dart';
 import '../views/homePageView.dart';
 
 class ProductCard extends StatefulWidget {
-  const ProductCard({super.key, required this.productModel});
+   ProductCard({super.key, required this.productModel});
 final ProductsModel productModel;
-
+  List prouductImage = [
+    'assets/items/mixBarry.jpeg',
+    'assets/items/orange.jpeg',
+    'assets/items/mango.jpeg',
+    'assets/items/apple.jpeg',
+    'assets/items/mixChocolet.png'
+  ];
   @override
   State<ProductCard> createState() => _ProductCardState();
 }
@@ -26,17 +32,20 @@ class _ProductCardState extends State<ProductCard> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.network(
-                  'https${widget.productModel.name??''}',
-                  width: 100,
-                  height: 200,
-                  fit: BoxFit.cover,
-                ),
-              ),
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: Image.network(
+            //     '${widget.productModel.imageURL??''}',
+            //     width: 100,
+            //     height: 200,
+            //     fit: BoxFit.cover,
+            //   ),
+            // ),
+            Container(
+              height: 100,
+              width: 100,
+              child: Image.asset(widget.productModel.imageURL??'',fit: BoxFit.cover),
+
             ),
              Text(
               widget.productModel.name??'',
